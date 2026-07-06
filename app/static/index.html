@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UCC CoDE Connect</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">University of Cape Coast</p>
+      <h1>CoDE Connect</h1>
+    </div>
+    <button id="logoutBtn" class="ghost hidden">Logout</button>
+  </header>
+
+  <main>
+    <section id="loginView" class="panel auth-panel">
+      <div>
+        <p class="eyebrow">College of Distance Education</p>
+        <h2>Management, communication, student support, and DESAG activities</h2>
+        <p class="muted">Use the demo accounts in the README or create production users from the admin dashboard later.</p>
+      </div>
+      <form id="loginForm" class="form-card">
+        <label>Email
+          <input id="email" type="email" value="admin@codeconnect.app" required />
+        </label>
+        <label>Password
+          <input id="password" type="password" value="Admin@123" required />
+        </label>
+        <button type="submit">Login</button>
+        <p id="loginError" class="error"></p>
+      </form>
+    </section>
+
+    <section id="appView" class="hidden">
+      <section class="welcome panel">
+        <div>
+          <p class="eyebrow">Logged in as</p>
+          <h2 id="userName">User</h2>
+          <p id="userRole" class="muted"></p>
+        </div>
+        <div class="quick-links" id="quickLinks"></div>
+      </section>
+
+      <section class="grid stats" id="statsGrid"></section>
+
+      <nav class="tabs" aria-label="Main modules">
+        <button class="tab active" data-tab="official">Official CoDE</button>
+        <button class="tab" data-tab="desag">DESAG</button>
+        <button class="tab" data-tab="centres">Centres</button>
+        <button class="tab" data-tab="adminOffices">Admin Offices</button>
+        <button class="tab" data-tab="tickets">Tickets</button>
+        <button class="tab" data-tab="events">Timetable & Events</button>
+        <button class="tab" data-tab="discussions">Discussions</button>
+      </nav>
+
+      <section id="official" class="tab-panel panel"></section>
+      <section id="desag" class="tab-panel panel hidden"></section>
+      <section id="centres" class="tab-panel panel hidden"></section>
+      <section id="adminOffices" class="tab-panel panel hidden"></section>
+      <section id="tickets" class="tab-panel panel hidden"></section>
+      <section id="events" class="tab-panel panel hidden"></section>
+      <section id="discussions" class="tab-panel panel hidden"></section>
+    </section>
+  </main>
+
+  <template id="noticeTemplate">
+    <article class="item-card">
+      <div class="item-head">
+        <h3></h3>
+        <span></span>
+      </div>
+      <p></p>
+      <small></small>
+    </article>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
